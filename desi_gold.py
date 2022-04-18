@@ -14,8 +14,8 @@ from   survey              import survey_specifics
 
 def desi_gold():
     from   desiutil.dust                 import mwdust_transmission
-    #from   desitarget.sv3.sv3_targetmask import desi_mask, bgs_mask
-    from   desitarget.targetmask          import desi_mask, bgs_mask
+    from   desitarget.sv3.sv3_targetmask import desi_mask, bgs_mask
+    #from   desitarget.targetmask          import desi_mask, bgs_mask
 
     root   = os.environ['DESI_ROOT'] + '/spectro/redux/everest/healpix/'
     tpix   = Table.read(root + 'tilepix.fits')
@@ -36,9 +36,9 @@ def desi_gold():
     tpix   = tpix[np.isin(tpix['TILEID'].data, tiles)]
     hps    = np.unique(tpix['HEALPIX'].data)
 
-    root  += '/main/bright/'
+    root  += '/sv3/bright/'
 
-    fpaths = [root + '{}/{}/redrock-main-bright-{}.fits'.format(str(x)[:3], x, x) for x in hps]
+    fpaths = [root + '{}/{}/redrock-sv3-bright-{}.fits'.format(str(x)[:3], x, x) for x in hps]
     fpaths = [x for x in fpaths if os.path.exists(x)]
 
     # e.g. 280/28027/redrock-sv3-bright-28027.fits
