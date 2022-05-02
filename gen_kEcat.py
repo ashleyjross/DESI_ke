@@ -30,11 +30,11 @@ zsurv   = f'z{survey}'.upper()
 
 root    = os.environ['GOLD_DIR']
 
-fpath   = findfile(ftype='gold', dryrun=False, survey=survey)
-opath   = findfile(ftype='kE',   dryrun=dryrun, survey=survey)
+fpath   = root+'desi_main_gold.fits'#findfile(ftype='gold', dryrun=False, survey=survey)
+opath   = 'temp.fits'#findfile(ftype='kE',   dryrun=dryrun, survey=survey)
 
-if args.nooverwrite:
-  overwrite_check(opath)
+#if args.nooverwrite:
+#  overwrite_check(opath)
 
 fields  = fetch_fields(survey)
     
