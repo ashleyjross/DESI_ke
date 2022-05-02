@@ -36,7 +36,7 @@ opath   = 'temp.fits'#findfile(ftype='kE',   dryrun=dryrun, survey=survey)
 #if args.nooverwrite:
 #  overwrite_check(opath)
 
-fields  = fetch_fields(survey)
+#fields  = fetch_fields(survey)
     
 dat     = Table.read(fpath)
 dat.pprint()
