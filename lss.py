@@ -4,7 +4,7 @@ import numpy as np
 from   astropy.table import Table
 
 
-def fetch_lss(version=2.1, pprint=False, sort=False,survey='SV3',specver='fuji'):
+def fetch_lss(version=3, pprint=False, sort=False,survey='SV3',specver='fuji'):
     # https://desi.lbl.gov/trac/wiki/ClusteringWG/LSScat/SV3/version2.1/
     #
     # /global/cfs/cdirs/desi/survey/catalogs/SV3/LSS/everest/LSScats/2.1/
