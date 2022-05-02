@@ -6,7 +6,7 @@ import numpy as np
 from   astropy.table import Table
 from   smith_kcorr   import GAMA_KCorrection
 from   rest_gmr      import smith_rest_gmr
-from   tmr_ecorr     import tmr_ecorr, tmr_q
+#from   tmr_ecorr     import tmr_ecorr, tmr_q
 from   abs_mag       import abs_mag
 
 #from   gama_limits   import gama_field, gama_fields
@@ -59,10 +59,10 @@ dat['KCORR_G0P0'] = kcorr_g.k_nonnative_zref(0.0, dat[zsurv], dat['REST_GMR_0P1'
 
 dat['REST_GMR_0P0'] = dat['GMR'] - (dat['KCORR_G0P0'] - dat['KCORR_R0P0'])
 
-dat['Q_COLOR_0P0'] = tmr_q(dat['REST_GMR_0P0'], aall=False)
+#dat['Q_COLOR_0P0'] = tmr_q(dat['REST_GMR_0P0'], aall=False)
 
-dat['EQ_ALL_0P0']   = tmr_ecorr(dat[zsurv], dat['REST_GMR_0P0'], aall=True)
-dat['EQ_COLOR_0P0'] = tmr_ecorr(dat[zsurv], dat['REST_GMR_0P0'], aall=False)
+#dat['EQ_ALL_0P0']   = tmr_ecorr(dat[zsurv], dat['REST_GMR_0P0'], aall=True)
+#dat['EQ_COLOR_0P0'] = tmr_ecorr(dat[zsurv], dat['REST_GMR_0P0'], aall=False)
 
 dat['MALL_0P0']     = abs_mag(dat['DETMAG'], dat['DISTMOD'], dat['KCORR_R0P0'], dat['EQ_ALL_0P0'])
 dat['MCOLOR_0P0']   = abs_mag(dat['DETMAG'], dat['DISTMOD'], dat['KCORR_R0P0'], dat['EQ_COLOR_0P0'])
