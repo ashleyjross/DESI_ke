@@ -4,16 +4,16 @@ import numpy as np
 from   astropy.table import Table
 
 
-def fetch_lss(version=2.1, pprint=False, sort=False):
+def fetch_lss(version=2.1, pprint=False, sort=False,survey='SV3',specver='fuji'):
     # https://desi.lbl.gov/trac/wiki/ClusteringWG/LSScat/SV3/version2.1/
     #
     # /global/cfs/cdirs/desi/survey/catalogs/SV3/LSS/everest/LSScats/2.1/
 
     # ('RA', 'DEC', 'TARGETID', 'Z', 'NTILE', 'TILES', 'rosette_number', 'rosette_r', 'FRACZ_TILELOCID', 'BITWEIGHTS', 'PROB_OBS', 'WEIGHT_ZFAIL', 'WEIGHT', 'flux_r_dered', 'NZ')
-    clustering = Table.read(f'/global/cfs/cdirs/desi/survey/catalogs/main/LSS/everest/LSScats/{version}/BGS_BRIGHT_clustering.dat.fits')
+    clustering = Table.read(f'/global/cfs/cdirs/desi/survey/catalogs/{survey}/LSS/{specver}/LSScats/{version}/BGS_BRIGHT_clustering.dat.fits')
 
     # NTILE, TILES, TILELOCIDS, LOCATION_ASSIGNED, TILELOCID_ASSIGNED, sort, COMP_TILE, rosette_number, rosette_r, FRACZ_TILELOCID, BITWEIGHTS, PROB_OBS
-    full       = Table.read(f'/global/cfs/cdirs/desi/survey/catalogs/main/LSS/everest/LSScats/{version}/BGS_BRIGHT_full.dat.fits')
+    full       = Table.read(f'/global/cfs/cdirs/desi/survey/catalogs/{survey}/LSS/{specver}/LSScats/{version}/BGS_BRIGHT_full.dat.fits')
 
     if pprint:
         print(clustering.dtype.names)
