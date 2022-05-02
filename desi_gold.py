@@ -6,7 +6,7 @@ import astropy.units as u
 from   astropy.coordinates import SkyCoord
 from   astropy.table       import Table, vstack, hstack, unique, join
 from   ros_tools           import tile2rosette, calc_rosr
-from   gama_limits         import gama_field
+#from   gama_limits         import gama_field
 from   cartesian           import cartesian, rotate
 from   cosmo               import cosmo, distmod
 from   lss                 import fetch_lss
@@ -99,7 +99,7 @@ def desi_gold():
     desi_zs['FIELD'] = [f'R{xx}' for xx in desi_zs['ROS'].data]
 
     ##  Cut DESI to good redshifts.                                                                                                                                                                
-    desi_zs['GAMA_FIELD'] = gama_field(desi_zs['TARGET_RA'].data, desi_zs['TARGET_DEC'].data)
+    #desi_zs['GAMA_FIELD'] = gama_field(desi_zs['TARGET_RA'].data, desi_zs['TARGET_DEC'].data)
 
     ##  HACK: PHOTSYS ASSUMED S.                                                                                                                                                                     
     desi_zs['GMAG_DRED']  = 22.5 - 2.5 * np.log10(desi_zs['FLUX_G'].data / mwdust_transmission(desi_zs['EBV'].data, 'G', 'S', match_legacy_surveys=True))
