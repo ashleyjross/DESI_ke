@@ -1,6 +1,6 @@
 import os
 import argparse
-import runtime
+#import runtime
 import numpy as np
 
 from   astropy.table import Table
@@ -9,7 +9,7 @@ from   rest_gmr      import smith_rest_gmr
 from   tmr_ecorr     import tmr_ecorr, tmr_q
 from   abs_mag       import abs_mag
 
-from   gama_limits   import gama_field, gama_fields
+#from   gama_limits   import gama_field, gama_fields
 from   desi_fields   import desi_fields
 from   findfile      import findfile, fetch_fields, overwrite_check
 
